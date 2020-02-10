@@ -9,11 +9,10 @@ import _dist_aln
 
 def generate_sequences(n_seqs, len_seq):
     seqs = []
-    reverse_mapping = {i: chr(i+64) for i in range(1,27)}
     for _ in range(n_seqs):
         seq = []
         for _ in range(len_seq):
-            seq.append(reverse_mapping[random.randint(1,5)])
+            seq.append(random.randint(1,20))
         seqs.append(seq)
     return seqs
 
@@ -37,11 +36,13 @@ def test_correctness(seqs):
                     seq1, seq2, gap_open_penalty,
                     gap_extend_penalty, S)
             py_score = score
+            print(start_end_positions)
 
             aligned1, aligned2, score, start_end_positions = \
                 _dist_aln_cpp.local_pairwise_align(
                     seq1, seq2, gap_open_penalty,
                     gap_extend_penalty, S)
+            print(start_end_positions)
             cpp_score = score
             if py_score != cpp_score:
                 print('mismatch')

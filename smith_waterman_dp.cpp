@@ -2,32 +2,9 @@
 #include <string>
 using namespace std;
 
-#define kN 600
-#define kM 600
+#define kN 1000
+#define kM 1000
 #define kPenalizeTerminalGaps 0
-
-/*
-void _print_matrix(int arr[kN][kM], int n, int m){
-    int i;
-    int j;
-    for (i=0; i < n; i++){
-        for (j=0; j < m; j++){
-            std::cout << arr[i][j] << ' ';
-        }
-        std::cout << '\n';
-    }
-}
-void _print_matrix(double arr[kN][kM], int n, int m){
-    int i;
-    int j;
-    for (i=0; i < n; i++){
-        for (j=0; j < m; j++){
-            std::cout << arr[i][j] << ' ';
-        }
-        std::cout << '\n';
-    }
-}
-*/
 
 void local_pairwise_align(int n, int *seq1, int m, int *seq2,
         double gap_open_penalty, double gap_extend_penalty,
@@ -47,7 +24,7 @@ void local_pairwise_align(int n, int *seq1, int m, int *seq2,
     const int kGapCharacter = -1;
     int i;
     int j;
-    
+
     // score_matrix initialization.
     double score_matrix[kN][kM] = {0.0};
     // traceback_matrix initialization.
