@@ -9,7 +9,7 @@ swig -c++ -python smith_waterman_dp.i
 
 * Compile
 ```bash
-g++ -fPIC -shared smith_waterman_dp_wrap.cxx -o _smith_water_dp.so -I/home/safpla/.local/lib/python2.7/site-packages/numpy/core/include/  -I/usr/include/python2.7/ -lpython2.7
+g++ -fPIC -shared smith_waterman_dp_wrap.cxx -o _smith_waterman_dp.so -I/home/safpla/.local/lib/python2.7/site-packages/numpy/core/include/  -I/usr/include/python2.7/ -lpython2.7
 ```
 Replace those two path names for Include Files with your own.
 

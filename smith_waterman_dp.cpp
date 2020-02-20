@@ -2,8 +2,8 @@
 #include <string>
 using namespace std;
 
-#define kN 1000
-#define kM 1000
+#define kN 600
+#define kM 600
 #define kPenalizeTerminalGaps 0
 
 void local_pairwise_align(int n, int *seq1, int m, int *seq2,
@@ -102,10 +102,10 @@ void local_pairwise_align(int n, int *seq1, int m, int *seq2,
     // Trace back
     // Initialize aligned_seq1, aligned_seq2.
     for (i = 0; i < aligned_n; i++){
-        aligned_seq1[i] = 0;
+        aligned_seq1[i] = -2;
     }
     for (i = 0; i < aligned_m; i++){
-        aligned_seq2[i] = 0;
+        aligned_seq2[i] = -2;
     }
     int current_row = *seq2_end;
     int current_col = *seq1_end;

@@ -43,6 +43,7 @@ def test_correctness(seqs):
                     seq1, seq2, gap_open_penalty,
                     gap_extend_penalty, S)
             print(start_end_positions)
+
             cpp_score = score
             if py_score != cpp_score:
                 print('mismatch')
@@ -94,7 +95,6 @@ def test_speedup(seqs):
 
 
 if __name__ == "__main__":
-    seqs = generate_sequences(2, 500)
+    seqs = generate_sequences(10, 500)
     test_correctness(seqs)
     #test_speedup(seqs)
-
